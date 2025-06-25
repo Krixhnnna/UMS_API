@@ -257,4 +257,4 @@ Example : https://ums.lpu.in/mobile/frmDisplayAnnouncement.aspx?aid=123309&tbl=O
 > This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by LPU or any of its affiliates or subsidiaries. This is an independent and unofficial module.
 
 ## License
-&copy; Neeraj Kumar | MIT
+&copy; Neeraj Kumar | MIT# UMS_API
