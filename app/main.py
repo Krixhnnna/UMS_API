@@ -17,9 +17,9 @@ from app.Config import settings
 startTime = time.time()
 
 app = FastAPI(
-    title=settings.APP_NAME,
-    version=settings.APP_VERSION,
-    description=settings.APP_DESCRIPTION,
+    title=settings.APP_NAME or "UMS API",
+    version=settings.APP_VERSION or "1.0.0",
+    description=settings.APP_DESCRIPTION or "University Management System API",
     docs_url="/docs" if settings.DOCS_ENABLED else None,
     contact={
         "name": "Neeraj Kumar",
@@ -44,11 +44,11 @@ async def health_route(req: Request):
     """
     return JSONResponse(
         {
-            "app": settings.APP_NAME,
-            "version": "v" + settings.APP_VERSION,
+            "app": settings.APP_NAME or "UMS API",
+            "version": "v" + (settings.APP_VERSION or "1.0.0"),
             "ip": req.client.host,
             "uptime": getUptime(startTime),
-            "mode": settings.PYTHON_ENV,
+            "mode": settings.PYTHON_ENV or "production",
         }
     )
 
