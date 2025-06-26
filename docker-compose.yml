@@ -28,3 +28,4 @@ services:
     command: uvicorn app.main:app --host 0.0.0.0 --port ${PORT} --workers=4
     ports:
       - ${PORT}:${PORT}
+# Updated by Krishna
