@@ -9,7 +9,7 @@ from app.scrapers.placement_portal import get_home_page_details, get_placement_d
 
 
 router = APIRouter(
-    prefix=settings.BASE_API_V1 + "/placement",
+    prefix=(settings.BASE_API_V1 or "/api/v1") + "/placement",
     tags=["Placement Portal Routes"],
     redirect_slashes=False,
 )

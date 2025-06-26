@@ -10,7 +10,7 @@ from typing import Annotated
 from app.Config import settings
 
 router = APIRouter(
-    prefix=settings.BASE_API_V1 + "/misc",
+    prefix=(settings.BASE_API_V1 or "/api/v1") + "/misc",
     tags=["Miscellaneous routes"],
     redirect_slashes=False,
 )

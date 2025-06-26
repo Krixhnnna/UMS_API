@@ -60,4 +60,4 @@ app.include_router(misc_router.router)
 app.include_router(hostel_router.router)
 app.include_router(placement_portal_router.router)
 
-handler = Mangum(app)
+# handler = Mangum(app)

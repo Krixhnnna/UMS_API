@@ -7,7 +7,7 @@ from app import services
 from typing import Annotated
 
 router = APIRouter(
-    prefix=settings.BASE_API_V1 + "/annoucements",
+    prefix=(settings.BASE_API_V1 or "/api/v1") + "/annoucements",
     tags=["Announcements"],
     redirect_slashes=False,
 )
