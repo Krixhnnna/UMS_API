@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     APP_VERSION: Optional[str] = None
     APP_DESCRIPTION: Optional[str] = None
     PORT: Optional[int] = 8009
-    BASE_API_V1: Optional[str] = None
+    BASE_API_V1: Optional[str] = "/api/v1"
     PYTHON_ENV: Optional[str] = None
     DOCS_ENABLED: Optional[bool] = False
     LPU_LIVE_TOKEN: Optional[str] = None
