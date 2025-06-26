@@ -22,9 +22,9 @@ app = FastAPI(
     description=settings.APP_DESCRIPTION or "University Management System API",
     docs_url="/docs" if settings.DOCS_ENABLED else None,
     contact={
-        "name": "Neeraj Kumar",
-        "url": "https://github.com/ryuk-me",
-        "email": "neerajkr1210@gmail.com",
+        "name": "Krishna",
+        "url": "https://github.com/Krixhnnna",
+        "email": "krishna@example.com",
     },
 )
 

@@ -1,3 +1,7 @@
+# UMS API Docker Compose Configuration
+# Updated by Krishna - 2024
+# University Management System API
+
 version: "3.9"
 
 services:

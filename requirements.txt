@@ -1,3 +1,7 @@
+# UMS API Dependencies
+# Updated by Krishna - 2024
+# FastAPI-based University Management System API
+
 aiohttp==3.9.0
 aiosignal==1.3.1
 annotated-types==0.6.0
