@@ -8,7 +8,7 @@ from app.scrapers.hostel_leave_slip_ums import get_hostel_leave_slip
 from typing import Annotated
 
 router = APIRouter(
-    prefix=settings.BASE_API_V1 + "/hostel",
+    prefix=(settings.BASE_API_V1 or "/api/v1") + "/hostel",
     tags=["Hostel Routes"],
     redirect_slashes=False,
 )

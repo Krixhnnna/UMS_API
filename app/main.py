@@ -10,21 +10,20 @@ from app.routers.v1 import (
     hostel_router,
     placement_portal_router,
 )
-from mangum import Mangum
 import time
 from app.Config import settings
 
 startTime = time.time()
 
 app = FastAPI(
-    title=settings.APP_NAME,
-    version=settings.APP_VERSION,
-    description=settings.APP_DESCRIPTION,
-    docs_url="/docs" if settings.DOCS_ENABLED else None,
+    title=settings.APP_NAME or "UMS API",
+    version=settings.APP_VERSION or "1.0.0",
+    description=settings.APP_DESCRIPTION or "University Management System API",
+    docs_url=None,
     contact={
-        "name": "Neeraj Kumar",
-        "url": "https://github.com/ryuk-me",
-        "email": "neerajkr1210@gmail.com",
+        "name": "Krishna",
+        "url": "https://github.com/Krixhnnna",
+        "email": "krishna@example.com",
     },
 )
 
@@ -44,11 +43,11 @@ async def health_route(req: Request):
     """
     return JSONResponse(
         {
-            "app": settings.APP_NAME,
-            "version": "v" + settings.APP_VERSION,
+            "app": settings.APP_NAME or "UMS API",
+            "version": "v" + (settings.APP_VERSION or "1.0.0"),
             "ip": req.client.host,
             "uptime": getUptime(startTime),
-            "mode": settings.PYTHON_ENV,
+            "mode": settings.PYTHON_ENV or "production",
         }
     )
 
@@ -60,4 +59,10 @@ app.include_router(misc_router.router)
 app.include_router(hostel_router.router)
 app.include_router(placement_portal_router.router)
 
-handler = Mangum(app)
+# Custom docs endpoint for Vercel
+@app.get("/api-docs")
+async def get_api_docs():
+    """
+    Returns the OpenAPI schema as JSON for API documentation.
+    """
+    return app.openapi()

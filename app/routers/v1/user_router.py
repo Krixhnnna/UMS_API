@@ -22,7 +22,7 @@ from app import services
 import asyncio
 
 router = APIRouter(
-    prefix=settings.BASE_API_V1 + "/user", tags=["User Route"], redirect_slashes=False
+    prefix=(settings.BASE_API_V1 or "/api/v1") + "/user", tags=["User Route"], redirect_slashes=False
 )
 
 

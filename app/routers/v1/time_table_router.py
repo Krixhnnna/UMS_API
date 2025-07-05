@@ -10,7 +10,7 @@ from typing import Annotated
 
 
 router = APIRouter(
-    prefix=settings.BASE_API_V1 + "/timetable",
+    prefix=(settings.BASE_API_V1 or "/api/v1") + "/timetable",
     tags=["Time Table and Make Up Route"],
     redirect_slashes=False,
 )
